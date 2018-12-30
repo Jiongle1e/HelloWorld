@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.pj.mapper.CategoryMapper">
+	
+	<select id="findUserByName" parameterType="Category" resultType="Category">
+	SELECT USER_ID AS USERID,USER_NAME AS USERNAME,PASSWORD FROM USER_INFO WHERE USER_NAME = #{userName}
+	</select>
+	
+	<select id="getAllUser" parameterType="Category" resultType="Category">
+	SELECT USER_ID AS USERID,USER_NAME AS USERNAME,PASSWORD FROM USER_INFO
+	</select>
+	
+	<insert id="addUser" >
+	insert into USER_INFO(user_id,user_name,password)values(#{userId},#{userName},#{password})
+	</insert>
+	
+	</mapper>
+
